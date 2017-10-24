@@ -2,7 +2,7 @@
 セットアップ方法
 ==========================================
 
-Movidius Neural Compute Stick(以降Movidius NCS)は、Ubuntu 16.07以降のOSにのみ対応しています。
+Movidius Neural Compute Stick(以降Movidius NCS)は、Ubuntu 16.04以降のOSにのみ対応しています。
 
 メインPCがUbuntuの方はそのままサンプルコードを試すことが出来ますが（主に自分）
 通常試す際はWindowsやMacが多いと思われるので、その際のテクニックをまとめます。
