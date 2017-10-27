@@ -50,7 +50,7 @@ yoloNCS/py_examples ディレクトリに居ることを想定して
 yoloNCS/py_examples ディレクトリに居ることを想定して
 
 ::
-
+    
     python3 yolo_example.py ../images/dog.jpg
 
 :note: 何度か失敗しますがドライバー周りの問題なので、何回か試すとうまく行く時がある
@@ -75,7 +75,9 @@ YOLOv2はCaffeに対応していないので、次のTensorFlowで試したい�
 
 遊び方としては
 
-python3 yolo_example.py <画像ファイル>
+::
+    
+    python3 yolo_example.py <画像ファイル>
 
 といった感じで、画像際るのアドレスを張ればＯＫそうなので
 
@@ -84,7 +86,6 @@ Googleを使って猫画像を拾ってきます。
 ::
 
     wget http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg
-
     python3 yolo_example.py 12.py
 
 .. image:: ../img/YOLOv1Caffe/catafter.PNG
