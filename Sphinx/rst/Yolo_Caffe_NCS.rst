@@ -49,7 +49,9 @@ yoloNCS/py_examples ディレクトリに居ることを想定して
 
 yoloNCS/py_examples ディレクトリに居ることを想定して
 
-python3 yolo_example.py ../images/dog.jpg
+::
+
+    python3 yolo_example.py ../images/dog.jpg
 
 :note: 何度か失敗しますがドライバー周りの問題なので、何回か試すとうまく行く時がある
 
@@ -81,9 +83,9 @@ Googleを使って猫画像を拾ってきます。
 
 ::
 
-wget http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg
+    wget http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg
 
-python3 yolo_example.py 12.py
+    python3 yolo_example.py 12.py
 
 .. image:: ../img/YOLOv1Caffe/catafter.PNG
     :width: 480px
