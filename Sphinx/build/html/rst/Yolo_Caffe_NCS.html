@@ -1,0 +1,153 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="jp">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Movidius で YOLO(Caffe) を試す方法 &#8212; Movidisu Neural Compute Stickで遊んで見る 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="セットアップ方法" href="setup.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="セットアップ方法"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Movidisu Neural Compute Stickで遊んで見る 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="movidius-yolo-caffe">
+<h1>Movidius で YOLO(Caffe) を試す方法<a class="headerlink" href="#movidius-yolo-caffe" title="Permalink to this headline">¶</a></h1>
+<p>YoloNCSを試してみます。</p>
+<p>試す環境としては、先のUbuntu16.04の仮想環境(ncsdkのexamplesが動いた状態)を想定して進めていきます。</p>
+<div class="section" id="yoloncs">
+<h2>◇YoloNCSをダウンロード<a class="headerlink" href="#yoloncs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gudovskiy</span><span class="o">/</span><span class="n">yoloNCS</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>YoloNCSのReadmeに使い方が書いてありますが、コマンド等が更新されている為、本記事を参考に試してみてください。</p>
+</div>
+<div class="section" id="yolo-caffe">
+<h2>◇Yolo(Caffe)モデルをダウンロード<a class="headerlink" href="#yolo-caffe" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">yoloNCS</span><span class="o">/</span><span class="n">py_examples</span>
+</pre></div>
+</div>
+<p>Googleドライブよりダウンロード(仮想環境の人は仮想環境内でブラウザを立ち上げるか、ファイルを共有してもらう)</p>
+<p><a class="reference external" href="https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing">https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing</a></p>
+<p>yoloNCS/py_examples にコピーします。</p>
+</div>
+<div class="section" id="caffe-modelncs">
+<h2>◇Caffe ModelをNCS用にでコンパイル<a class="headerlink" href="#caffe-modelncs" title="Permalink to this headline">¶</a></h2>
+<p>yoloNCS/py_examples ディレクトリに居ることを想定して</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mvNCCompile</span> <span class="o">-</span><span class="n">w</span> <span class="n">yolo_tiny</span><span class="o">.</span><span class="n">caffemodel</span> <span class="o">-</span><span class="n">s</span> <span class="mi">12</span> <span class="o">../</span><span class="n">prototxt</span><span class="o">/</span><span class="n">yolo_tiny_deploy</span><span class="o">.</span><span class="n">prototxt</span>
+</pre></div>
+</div>
+<p>を実行。するとpy_examplesディレクトリに graphが出来ます。</p>
+</div>
+<div class="section" id="id1">
+<h2>◇Yolo (Caffe)を試してみる<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>yoloNCS/py_examples ディレクトリに居ることを想定して</p>
+<p>python3 yolo_example.py ../images/dog.jpg</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">何度か失敗しますがドライバー周りの問題なので、何回か試すとうまく行く時がある</td>
+</tr>
+</tbody>
+</table>
+<p>上手くいくと、以下の図が起動するはず・・・</p>
+<a class="reference internal image-reference" href="../_images/dogafter.PNG"><img alt="../_images/dogafter.PNG" src="../_images/dogafter.PNG" style="width: 480px;" /></a>
+<p>できました！</p>
+</div>
+<div class="section" id="id2">
+<h2>◇他の画像を試してみる<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>今回試したYOLOが認識できるワードは</p>
+<p>[&quot;aeroplane&quot;, &quot;bicycle&quot;, &quot;bird&quot;, &quot;boat&quot;, &quot;bottle&quot;, &quot;bus&quot;, &quot;car&quot;, &quot;cat&quot;, &quot;chair&quot;, &quot;cow&quot;, &quot;diningtable&quot;, &quot;dog&quot;, &quot;horse&quot;, &quot;motorbike&quot;, &quot;person&quot;, &quot;pottedplant&quot;, &quot;sheep&quot;, &quot;sofa&quot;, &quot;train&quot;,&quot;tvmonitor&quot;]</p>
+<p>の２０種類だけですが、最新のYOLOv2になると９０００種類の認識が出来るそうです。</p>
+<p>YOLOv2はCaffeに対応していないので、次のTensorFlowで試したいと思いますが、面白いのでこのまま画像認識されます。</p>
+<p>遊び方としては</p>
+<p>python3 yolo_example.py &lt;画像ファイル&gt;</p>
+<p>といった感じで、画像際るのアドレスを張ればＯＫそうなので</p>
+<p>Googleを使って猫画像を拾ってきます。</p>
+<p>wget <a class="reference external" href="http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg">http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg</a></p>
+<p>python3 yolo_example.py 12.py</p>
+<a class="reference internal image-reference" href="../_images/catafter.PNG"><img alt="../_images/catafter.PNG" src="../_images/catafter.PNG" style="width: 480px;" /></a>
+<p>面白い。</p>
+</div>
+<div class="section" id="id3">
+<h2>◇試してみて思う事<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>後日まとめます。</p>
+<div class="section" id="id4">
+<h3>管理情報<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">著者:</th><td class="field-body">北神 雄太(Yuta Kitagami)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">連絡先:</th><td class="field-body"><a class="reference external" href="mailto:kitagami&#37;&#52;&#48;Artifactnoise&#46;com">kitagami<span>&#64;</span>Artifactnoise<span>&#46;</span>com</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">公開日:</th><td class="field-body">2017/10/27</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="セットアップ方法"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Movidisu Neural Compute Stickで遊んで見る 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, ArtifactNoise.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

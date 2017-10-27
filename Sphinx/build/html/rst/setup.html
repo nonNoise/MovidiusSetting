@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Movidius で YOLO(Caffe) を試す方法" href="Yolo_Caffe_NCS.html" />
     <link rel="prev" title="Movidius Neural Compute Stick とは何ですか？" href="main.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -37,6 +38,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Yolo_Caffe_NCS.html" title="Movidius で YOLO(Caffe) を試す方法"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="main.html" title="Movidius Neural Compute Stick とは何ですか？"
              accesskey="P">previous</a> |</li>
@@ -78,14 +82,14 @@
 <h3>◇Virtual BoxのUSBフィルタを弄る<a class="headerlink" href="#virtual-boxusb" title="Permalink to this headline">¶</a></h3>
 <p>さて、無事にUbuntu16.04が動いていると思います。（って事にしてます）</p>
 <p>一旦、Ubuntuを終了し、Virtual Boxの設定画面に戻ります。</p>
-<a class="reference internal image-reference" href="../_images/02.PNG"><img alt="../_images/02.PNG" src="../_images/02.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/02.PNG"><img alt="../_images/02.PNG" src="../_images/02.PNG" style="width: 480px;" /></a>
 <p>図の[設定(S)]をクリックし、</p>
-<a class="reference internal image-reference" href="../_images/03.PNG"><img alt="../_images/03.PNG" src="../_images/03.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/03.PNG"><img alt="../_images/03.PNG" src="../_images/03.PNG" style="width: 480px;" /></a>
 <p>の画面より[USB]を選択し、</p>
-<a class="reference internal image-reference" href="../_images/05.PNG"><img alt="../_images/05.PNG" src="../_images/05.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/05.PNG"><img alt="../_images/05.PNG" src="../_images/05.PNG" style="width: 480px;" /></a>
 <p>ここでUSBを有効化にチェック</p>
-<p>お使いのPCにMovidiusを接続しますが、その接続先がUSB3.0であれば[USB 3.0(xHCI)コントローラ]にチェック。
-接続先がUSB2.0であれば、[USB 2.0(EHCI)コントローラ]にチェック。</p>
+<p>お使いのPCにMovidiusを接続しますが、その接続先がUSB3.0であれば[USB 3.0(xHCI)コントローラ]にチェック。</p>
+<p>接続先がUSB2.0であれば、[USB 2.0(EHCI)コントローラ]にチェック。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -95,11 +99,11 @@
 </tbody>
 </table>
 <p>続いて、USBデバイスフィルタにUSBデバイスを追加するので、USBマークに＋と書いてある箇所をクリックし</p>
-<a class="reference internal image-reference" href="../_images/06.PNG"><img alt="../_images/06.PNG" src="../_images/06.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/06.PNG"><img alt="../_images/06.PNG" src="../_images/06.PNG" style="width: 480px;" /></a>
 <p>と入力し、続いて再度USB＋のマークをクリックし</p>
-<a class="reference internal image-reference" href="../_images/07.PNG"><img alt="../_images/07.PNG" src="../_images/07.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/07.PNG"><img alt="../_images/07.PNG" src="../_images/07.PNG" style="width: 480px;" /></a>
 <p>と入力する。</p>
-<a class="reference internal image-reference" href="../_images/05.PNG"><img alt="../_images/05.PNG" src="../_images/05.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/05.PNG"><img alt="../_images/05.PNG" src="../_images/05.PNG" style="width: 480px;" /></a>
 <p>再度見直して、一番先頭に ベンダーIDが[03E7]のモノがあり、続いて二番目にベンターID[040E]の物がある順番になっているか確認。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -113,31 +117,39 @@
 <div class="section" id="id2">
 <h3>◇Virtual Box上のUbuntuを動かす<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Virtual BoxでUbuntuを起動すると、以下の画面のようになり、</p>
-<a class="reference internal image-reference" href="../_images/08.PNG"><img alt="../_images/08.PNG" src="../_images/08.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/08.PNG"><img alt="../_images/08.PNG" src="../_images/08.PNG" style="width: 480px;" /></a>
 <p>ここでUSB機能を追加するための仮想CDドライブを挿入</p>
-<a class="reference internal image-reference" href="../_images/09.PNG"><img alt="../_images/09.PNG" src="../_images/09.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/09.PNG"><img alt="../_images/09.PNG" src="../_images/09.PNG" style="width: 480px;" /></a>
 <p>Virtual Boxのウィンドウより一番したの Guest Additions CDイメージの挿入　をクリック</p>
-<a class="reference internal image-reference" href="../_images/08.PNG"><img alt="../_images/08.PNG" src="../_images/08.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/08.PNG"><img alt="../_images/08.PNG" src="../_images/08.PNG" style="width: 480px;" /></a>
 <p>すると、インストールなど自動でやってくれるそう。</p>
-<a class="reference internal image-reference" href="../_images/10.PNG"><img alt="../_images/10.PNG" src="../_images/10.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/10.PNG"><img alt="../_images/10.PNG" src="../_images/10.PNG" style="width: 480px;" /></a>
 <p>ルートのパスワードなどを入力し、この文字列[Preas Return to clode this windows]となればエンターで終了します。</p>
-<a class="reference internal image-reference" href="../_images/11.PNG"><img alt="../_images/11.PNG" src="../_images/11.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/11.PNG"><img alt="../_images/11.PNG" src="../_images/11.PNG" style="width: 480px;" /></a>
 <p>これで開発環境を作成する環境が整うので、ターミナルよりこの状態で次のステップへ。</p>
-<a class="reference internal image-reference" href="../_images/12.PNG"><img alt="../_images/12.PNG" src="../_images/12.PNG" style="width: 320px;" /></a>
+<a class="reference internal image-reference" href="../_images/12.PNG"><img alt="../_images/12.PNG" src="../_images/12.PNG" style="width: 480px;" /></a>
 </div>
 <div class="section" id="ubuntumovidius-sdk">
 <h3>◇UbuntuにMovidius SDKを入れる<a class="headerlink" href="#ubuntumovidius-sdk" title="Permalink to this headline">¶</a></h3>
 <p>ターミナルより、以下のコマンドをペタばりでちゃんと動く</p>
-<p>mkdir -p ~/workspace</p>
-<p>cd ~/workspace</p>
-<p>git clone <a class="reference external" href="https://github.com/movidius/ncsdk.git">https://github.com/movidius/ncsdk.git</a></p>
-<p>cd ~/workspace/ncsdk</p>
-<p>make install</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">workspace</span>
+
+<span class="n">cd</span> <span class="o">~/</span><span class="n">workspace</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">movidius</span><span class="o">/</span><span class="n">ncsdk</span><span class="o">.</span><span class="n">git</span>
+
+<span class="n">cd</span> <span class="o">~/</span><span class="n">workspace</span><span class="o">/</span><span class="n">ncsdk</span>
+
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
 <p>開発環境のダウンロードからコンパイルまで全部行ってくれます。数分から１時間程度コマンドがダラダラと実行されていきます。</p>
 <p>完了したら、次に</p>
-<blockquote>
-<div>cd ~/workspace/ncsdk</div></blockquote>
-<p>make examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">workspace</span><span class="o">/</span><span class="n">ncsdk</span>
+
+<span class="n">make</span> <span class="n">examples</span>
+</pre></div>
+</div>
 <p>を入力して、USBに接続されたMovidiusを使って実際に深層学習を行っていきます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -164,6 +176,9 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="Yolo_Caffe_NCS.html" title="Movidius で YOLO(Caffe) を試す方法"
+             >next</a> |</li>
+        <li class="right" >
           <a href="main.html" title="Movidius Neural Compute Stick とは何ですか？"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Movidisu Neural Compute Stickで遊んで見る 0.1 documentation</a> &#187;</li> 
@@ -171,7 +186,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, ArtifactNoise.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
   </body>
 </html>

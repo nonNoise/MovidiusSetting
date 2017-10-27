@@ -12,7 +12,7 @@ Movidisu Neural Compute Stickで遊んで見る
 
     rst/main
     rst/setup
-
+    rst/Yolo_Caffe_NCS.rst
 
 ----------------------------------------------------------------------
 

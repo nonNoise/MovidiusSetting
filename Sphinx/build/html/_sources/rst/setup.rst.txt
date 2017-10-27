@@ -50,21 +50,22 @@ https://qiita.com/ykawakami/items/4bae371932110b2e25e3
 一旦、Ubuntuを終了し、Virtual Boxの設定画面に戻ります。
 
 .. image:: ../img/Movidius/02.PNG
-    :width: 320px
+    :width: 480px
 
 図の[設定(S)]をクリックし、
 
 .. image:: ../img/Movidius/03.PNG
-    :width: 320px
+    :width: 480px
 
 の画面より[USB]を選択し、
 
 .. image:: ../img/Movidius/05.PNG
-    :width: 320px
+    :width: 480px
 
 ここでUSBを有効化にチェック
 
 お使いのPCにMovidiusを接続しますが、その接続先がUSB3.0であれば[USB 3.0(xHCI)コントローラ]にチェック。
+
 接続先がUSB2.0であれば、[USB 2.0(EHCI)コントローラ]にチェック。
 
 :note: ここのチェックを間違えると動かないので注意
@@ -72,17 +73,17 @@ https://qiita.com/ykawakami/items/4bae371932110b2e25e3
 続いて、USBデバイスフィルタにUSBデバイスを追加するので、USBマークに＋と書いてある箇所をクリックし
 
 .. image:: ../img/Movidius/06.PNG
-    :width: 320px
+    :width: 480px
 
 と入力し、続いて再度USB＋のマークをクリックし
 
 .. image:: ../img/Movidius/07.PNG
-    :width: 320px
+    :width: 480px
 
 と入力する。
 
 .. image:: ../img/Movidius/05.PNG
-    :width: 320px
+    :width: 480px
 
 再度見直して、一番先頭に ベンダーIDが[03E7]のモノがあり、続いて二番目にベンターID[040E]の物がある順番になっているか確認。
 
@@ -95,47 +96,48 @@ https://qiita.com/ykawakami/items/4bae371932110b2e25e3
 Virtual BoxでUbuntuを起動すると、以下の画面のようになり、
 
 .. image:: ../img/Movidius/08.PNG
-    :width: 320px
+    :width: 480px
 
 ここでUSB機能を追加するための仮想CDドライブを挿入
 
 .. image:: ../img/Movidius/09.PNG
-    :width: 320px
+    :width: 480px
 
 Virtual Boxのウィンドウより一番したの Guest Additions CDイメージの挿入　をクリック
 
 .. image:: ../img/Movidius/08.PNG
-    :width: 320px
+    :width: 480px
 
 すると、インストールなど自動でやってくれるそう。
 
 .. image:: ../img/Movidius/10.PNG
-    :width: 320px
+    :width: 480px
 
 ルートのパスワードなどを入力し、この文字列[Preas Return to clode this windows]となればエンターで終了します。
 
 .. image:: ../img/Movidius/11.PNG
-    :width: 320px
+    :width: 480px
 
 これで開発環境を作成する環境が整うので、ターミナルよりこの状態で次のステップへ。
 
 .. image:: ../img/Movidius/12.PNG
-    :width: 320px
+    :width: 480px
 
 ◇UbuntuにMovidius SDKを入れる
 --------------------------------------------------
 
 ターミナルより、以下のコマンドをペタばりでちゃんと動く
+::
 
-mkdir -p ~/workspace
+    mkdir -p ~/workspace
 
-cd ~/workspace
+    cd ~/workspace
 
-git clone https://github.com/movidius/ncsdk.git
+    git clone https://github.com/movidius/ncsdk.git
 
-cd ~/workspace/ncsdk
+    cd ~/workspace/ncsdk
 
-make install
+    make install
 
 
 開発環境のダウンロードからコンパイルまで全部行ってくれます。数分から１時間程度コマンドがダラダラと実行されていきます。
@@ -143,10 +145,11 @@ make install
 
 完了したら、次に
 
+::
 
- cd ~/workspace/ncsdk
+    cd ~/workspace/ncsdk
 
-make examples
+    make examples
 
 を入力して、USBに接続されたMovidiusを使って実際に深層学習を行っていきます。
 
