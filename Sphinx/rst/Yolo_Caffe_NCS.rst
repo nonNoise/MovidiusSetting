@@ -105,3 +105,4 @@ python3 yolo_example.py 12.py
 :著者: 北神 雄太(Yuta Kitagami)
 :連絡先: kitagami@Artifactnoise.com
 :公開日: 2017/10/27
+
