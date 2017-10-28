@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Movidisu Neural Compute Stickで遊んで見る'
+project = u'Movidius Neural Compute Stickで遊んで見る'
 copyright = '2017, ArtifactNoise'
 author = 'Yuta Kitagami'
 

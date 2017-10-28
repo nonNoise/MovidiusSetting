@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("Movidisu Neural Compute Stickで遊んで見る 0.1 documentation");
+        $("li.nav-item-0 a").text("Movidius Neural Compute Stickで遊んで見る 0.1 documentation");
     }
 });
