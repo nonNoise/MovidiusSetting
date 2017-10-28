@@ -86,7 +86,7 @@ Googleを使って猫画像を拾ってきます。
 ::
 
     wget http://tgs.jp.net/wp-content/uploads/2016/12/12.jpg
-    python3 yolo_example.py 12.py
+    python3 yolo_example.py 12.jpg
 
 .. image:: ../img/YOLOv1Caffe/catafter.PNG
     :width: 480px
@@ -98,7 +98,6 @@ Googleを使って猫画像を拾ってきます。
 -------------------------------------------------
 
 後日まとめます。
-
 
 
 
