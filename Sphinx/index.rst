@@ -7,12 +7,12 @@ Movidius Neural Compute Stickで遊んで見る
 このサイトは、Movidius Neural Compute Stick(NCS)の紹介と手順をまとめたサイトです。
 
 
-.. toctree::
-    :maxdepth: 1
+    .. toctree::
+        :maxdepth: 1
 
-    rst/main
-    rst/setup
-    rst/Yolo_Caffe_NCS.rst
+        rst/main
+        rst/setup
+        rst/Yolo_Caffe_NCS.rst
 
 ----------------------------------------------------------------------
 
