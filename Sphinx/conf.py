@@ -91,14 +91,16 @@ todo_include_todos = False
 #    'nosidebar': True, 
 #    }
 
-extensions = ['sphinxjp.themes.basicstrap']
-html_theme = 'basicstrap'
-html_theme_options = {
-    'header_inverse': False,
-    'relbar_inverse': False,
-    'inner_theme': True,
-    'inner_theme_name': 'bootswatch-slate',
-}
+#extensions = ['sphinxjp.themes.basicstrap']
+#html_theme = 'basicstrap'
+#html_theme_options = {
+#    'header_inverse': False,
+#    'relbar_inverse': False,
+#    'inner_theme': True,
+#    'inner_theme_name': 'bootswatch-slate',
+#}
+html_theme = 'bizstyle'
+html_theme_options = {'maincolor' : "#0F4AA6"}
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
