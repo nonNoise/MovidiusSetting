@@ -39,6 +39,8 @@ https://www.virtualbox.org/wiki/Downloads
 「VirtualBoxにUbuntu16.04をインストール」
 https://qiita.com/ykawakami/items/4bae371932110b2e25e3
 
+Ubuntu16.04は以下のサイトよりダウンロードが可能です。
+https://www.ubuntu.com/download/desktop
 
 インストール後、先ほどダウンロードしたVirtualBox 5.2.0 platform packagesをダブルクリックするとUSB周りの設定が出来るように成ります。
 
