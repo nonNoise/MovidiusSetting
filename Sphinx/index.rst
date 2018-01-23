@@ -14,6 +14,12 @@ Movidius Neural Compute Stickで遊んで見る
         rst/setup
         rst/Yolo_Caffe_NCS.rst
 
+◇購入方法（Amazon.jp）
+
+    https://www.amazon.co.jp/dp/B074PRCJKH
+
+
+
 ----------------------------------------------------------------------
 
 ◇本家サイト
