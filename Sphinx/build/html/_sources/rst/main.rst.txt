@@ -7,7 +7,6 @@ Movidius Neural Compute Stick(Movidius NCS)は、Movidius社(現Intel社)より�
 
 ◇購入方法（Amazon.jp）
 
-    https://www.amazon.co.jp/dp/B074PRCJKH
-
+    https://www.amazon.co.jp/dp/B074PRCJKH?m=A9356EJ9J50KH&ref_=v_sp_widget_detail_page
 
 後日追記
