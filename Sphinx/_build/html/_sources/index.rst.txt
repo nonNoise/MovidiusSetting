@@ -1,0 +1,56 @@
+================================================================================
+Movidius Neural Compute Stickで遊んで見る
+================================================================================
+
+.. image:: img/Movidius/image_1000_474_85.jpg
+    :width: 480px
+
+
+このサイトは、Movidius Neural Compute Stick(NCS)の紹介と手順をまとめたサイトです。
+
+    .. toctree::
+        :maxdepth: 1
+
+        rst/main
+        rst/setup
+        rst/Yolo_Caffe_NCS.rst
+
+◇購入方法（Amazon.jp）
+
+    https://www.amazon.co.jp/dp/B074PRCJKH?m=A9356EJ9J50KH&ref_=v_sp_widget_detail_page
+
+
+
+----------------------------------------------------------------------
+
+◇本家サイト
+
+    https://developer.movidius.com/
+    
+◇本家Github
+
+    https://github.com/movidius/ncsdk
+
+◇本家ドキュメント    
+
+    https://movidius.github.io/ncsdk/
+
+
+
+
+
+
+管理情報
+******************************************************************
+:著者: 北神 雄太(Yuta Kitagami)
+:連絡先: kitagami@Artifactnoise.com
+:公開日: 2017/10/25 
+
+外部リンク
+******************************************************************
+
+:ArtifactNoise:  http://artifactnoise.com/
+	
+:Twitter: @nonNoise  http://twitter.com/nonNoise
+
+:FaseBook: https://www.facebook.com/yuta.kitagamiEx
