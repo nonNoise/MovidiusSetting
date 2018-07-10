@@ -11,11 +11,12 @@ Movidius Neural Compute Stick(以降Movidius NCS)は、Ubuntu 16.04以降のOS�
 ◇購入方法（Amazon.jp）
 --------------------------------------------------
 
+https://amzn.to/2u9Hifj
+
 .. raw:: html
     
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=movidius-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B074PRCJKH&linkId=53b6aac9df8648ee07ad45ce6f96f282&bc1=000000&lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
     </iframe>
-
 
 --------------------------------------------------
 ▼　Windows、Macの場合
@@ -171,4 +172,12 @@ Virtual Boxのウィンドウより一番したの Guest Additions CDイメー�
 
 で、無事に赤文字も出ずに完了すれば、ひとまず開発を行う環境が出来たので後は応用です。
 
+
+
+******************************************************************
+管理情報
+******************************************************************
+:著者: 北神 雄太(Yuta Kitagami)
+:連絡先: kitagami@Artifactnoise.com
+:公開日: 2017/10/27
 

@@ -58,7 +58,10 @@
 <li><a class="reference internal" href="#ubuntu">2.Ubuntuのイメージファイルをダウンロードする。</a></li>
 <li><a class="reference internal" href="#usbusb">3.USBブート用のUSBメモリーを作成する</a></li>
 <li><a class="reference internal" href="#x201usb-boot">4.X201でUSB-Bootを行う</a></li>
-<li><a class="reference internal" href="#ubuntu-xubuntu-movidius">5.Ubuntu(Xubuntu)でMovidiusを動かす。</a></li>
+<li><a class="reference internal" href="#ubuntu-xubuntu-movidius">5.Ubuntu(Xubuntu)でMovidiusを動かす。</a><ul>
+<li><a class="reference internal" href="#id5">管理情報</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -104,7 +107,7 @@
 <div class="section" id="amazon-jp">
 <h2>◇購入方法（Amazon.jp）<a class="headerlink" href="#amazon-jp" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://amzn.to/2u9Hifj">https://amzn.to/2u9Hifj</a></p>
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=movidius-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B074PRCJKH&linkId=53b6aac9df8648ee07ad45ce6f96f282&bc1=000000&lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=movidius-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B074PRCJKH&linkId=53179bf9a832b6538079d8a489326cbf&bc1=000000&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
 </iframe></div>
 <div class="section" id="id2">
 <h2>1.準備するもの<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -209,6 +212,28 @@
 </pre></div>
 </div>
 <p>エラーが出ないことを祈ります。</p>
+<p>Installが終わると、次にSDKのサンプルを動かしてみます。</p>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>MovidiusをUSBに接続**します。忘れずにね。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">examples</span>
+</pre></div>
+</div>
+<p>実行すると必要なファイルをダウンロードしてきます。数十分かかるかも知れません。</p>
+<p>二回目以降はもう少し早くなると思いますが、ディープラーニングは何かと時間がかかります。ゆっくり見守ります。</p>
+<div class="section" id="id5">
+<h3>管理情報<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">著者:</th><td class="field-body">北神 雄太(Yuta Kitagami)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">連絡先:</th><td class="field-body"><a class="reference external" href="mailto:kitagami&#37;&#52;&#48;Artifactnoise&#46;com">kitagami<span>&#64;</span>Artifactnoise<span>&#46;</span>com</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">公開日:</th><td class="field-body">2018/07/11</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
