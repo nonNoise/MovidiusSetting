@@ -11,7 +11,11 @@ Movidius Neural Compute Stick(以降Movidius NCS)は、Ubuntu 16.04以降のOS�
 ◇購入方法（Amazon.jp）
 --------------------------------------------------
 
-    https://www.amazon.co.jp/dp/B074PRCJKH?m=A9356EJ9J50KH&ref_=v_sp_widget_detail_page
+.. raw:: html
+    
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=movidius-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B074PRCJKH&linkId=53b6aac9df8648ee07ad45ce6f96f282&bc1=000000&lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+    </iframe>
+
 
 --------------------------------------------------
 ▼　Windows、Macの場合

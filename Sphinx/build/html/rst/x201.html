@@ -52,11 +52,12 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Lenovo X201 で始める Movidius</a><ul>
-<li><a class="reference internal" href="#id1">1.はじめに</a></li>
-<li><a class="reference internal" href="#id2">2.準備するもの</a></li>
-<li><a class="reference internal" href="#ubuntu">3.Ubuntuのイメージファイルをダウンロードする。</a></li>
-<li><a class="reference internal" href="#usbusb">4.USBブート用のUSBメモリーを作成する</a></li>
-<li><a class="reference internal" href="#x201usb-boot">5.X201でUSB-Bootを行う</a></li>
+<li><a class="reference internal" href="#id1">0.はじめに</a></li>
+<li><a class="reference internal" href="#amazon-jp">◇購入方法（Amazon.jp）</a></li>
+<li><a class="reference internal" href="#id2">1.準備するもの</a></li>
+<li><a class="reference internal" href="#ubuntu">2.Ubuntuのイメージファイルをダウンロードする。</a></li>
+<li><a class="reference internal" href="#usbusb">3.USBブート用のUSBメモリーを作成する</a></li>
+<li><a class="reference internal" href="#x201usb-boot">4.X201でUSB-Bootを行う</a></li>
 <li><a class="reference internal" href="#ubuntu-xubuntu-movidius">5.Ubuntu(Xubuntu)でMovidiusを動かす。</a></li>
 </ul>
 </li>
@@ -95,13 +96,17 @@
   <div class="section" id="lenovo-x201-movidius">
 <h1>Lenovo X201 で始める Movidius<a class="headerlink" href="#lenovo-x201-movidius" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>1.はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>0.はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Movidiusが発売されて数カ月、タンスの肥やしになってたMovidiusを久しぶりに触りたく、
 同じくタンスの肥やしになっていたX201にUbuntuをインストールしてMovidius専用開発機を作ろうと思いました。</p>
 <p>勿論、X201以外にX230やX240も動くと思いますが、ここは愛を込めてX201として話を進めていきます。</p>
 </div>
+<div class="section" id="amazon-jp">
+<h2>◇購入方法（Amazon.jp）<a class="headerlink" href="#amazon-jp" title="Permalink to this headline">¶</a></h2>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=movidius-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B074PRCJKH&linkId=53b6aac9df8648ee07ad45ce6f96f282&bc1=000000&lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
+</iframe></div>
 <div class="section" id="id2">
-<h2>2.準備するもの<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>1.準備するもの<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>USBメモリ 16GB (フォーマットしても良いもの)</li>
 <li>Movidius</li>
@@ -111,7 +116,7 @@
 ※ 本書はX201をUbuntu開発機にしても問題ない方限定です。</p>
 </div>
 <div class="section" id="ubuntu">
-<h2>3.Ubuntuのイメージファイルをダウンロードする。<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<h2>2.Ubuntuのイメージファイルをダウンロードする。<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
 <p>MovidiusはUbuntu x86_64 に対応した環境か、Raspberry Pi 3Bの様なボードに対応している。</p>
 <p>勿論Raspberry Pi 3Bを使う方が大多数と思われるが、メインで開発をするのにRaspberry Pi 3Bを元に行うとか物凄く面倒！</p>
 <p>そんな事なので、今回家でたまたま眠ってた X201を使ってMovidius専用開発環境の構築を行う。</p>
@@ -133,7 +138,7 @@
 <p>これからUSBブートを作成します。</p>
 </div>
 <div class="section" id="usbusb">
-<h2>4.USBブート用のUSBメモリーを作成する<a class="headerlink" href="#usbusb" title="Permalink to this headline">¶</a></h2>
+<h2>3.USBブート用のUSBメモリーを作成する<a class="headerlink" href="#usbusb" title="Permalink to this headline">¶</a></h2>
 <p>USBブート用のUSBメモリーを作成するソフトは、</p>
 <p>今回は説明の都合、Windows,Mac,Linuxで動作するEtcherを使用します。</p>
 <blockquote>
@@ -152,7 +157,7 @@
 <p>終了後、USBメモリを抜き、X201のUSBポートへ接続します。</p>
 </div>
 <div class="section" id="x201usb-boot">
-<h2>5.X201でUSB-Bootを行う<a class="headerlink" href="#x201usb-boot" title="Permalink to this headline">¶</a></h2>
+<h2>4.X201でUSB-Bootを行う<a class="headerlink" href="#x201usb-boot" title="Permalink to this headline">¶</a></h2>
 <p>X201のUSBポートにUSBメモリを接続し、X201の電源を入れます。</p>
 <p>その際、OSが立ち上がる前の以下の画面の時に、F1を押し、BIOS設定にします。</p>
 <img alt="../_images/01.png" src="../_images/01.png" />
