@@ -7,6 +7,12 @@ Movidius Neural Compute Stick(以降Movidius NCS)は、Ubuntu 16.04以降のOS�
 メインPCがUbuntuの方はそのままサンプルコードを試すことが出来ますが（主に自分）
 通常試す際はWindowsやMacが多いと思われるので、その際のテクニックをまとめます。
 
+
+◇購入方法（Amazon.jp）
+--------------------------------------------------
+
+    https://www.amazon.co.jp/dp/B074PRCJKH?m=A9356EJ9J50KH&ref_=v_sp_widget_detail_page
+
 --------------------------------------------------
 ▼　Windows、Macの場合
 --------------------------------------------------

@@ -1,0 +1,232 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="jp">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lenovo X201 で始める Movidius &#8212; Movidius Neural Compute Stickで遊んで見る 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Movidius で YOLO(Caffe) を試す方法" href="Yolo_Caffe_NCS.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24204483-2', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Yolo_Caffe_NCS.html" title="Movidius で YOLO(Caffe) を試す方法"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Movidius Neural Compute Stickで遊んで見る 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lenovo X201 で始める Movidius</a><ul>
+<li><a class="reference internal" href="#id1">1.はじめに</a></li>
+<li><a class="reference internal" href="#id2">2.準備するもの</a></li>
+<li><a class="reference internal" href="#ubuntu">3.Ubuntuのイメージファイルをダウンロードする。</a></li>
+<li><a class="reference internal" href="#usbusb">4.USBブート用のUSBメモリーを作成する</a></li>
+<li><a class="reference internal" href="#x201usb-boot">5.X201でUSB-Bootを行う</a></li>
+<li><a class="reference internal" href="#ubuntu-xubuntu-movidius">5.Ubuntu(Xubuntu)でMovidiusを動かす。</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Yolo_Caffe_NCS.html"
+                        title="previous chapter">Movidius で YOLO(Caffe) を試す方法</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/x201.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lenovo-x201-movidius">
+<h1>Lenovo X201 で始める Movidius<a class="headerlink" href="#lenovo-x201-movidius" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Movidiusが発売されて数カ月、タンスの肥やしになってたMovidiusを久しぶりに触りたく、
+同じくタンスの肥やしになっていたX201にUbuntuをインストールしてMovidius専用開発機を作ろうと思いました。</p>
+<p>勿論、X201以外にX230やX240も動くと思いますが、ここは愛を込めてX201として話を進めていきます。</p>
+</div>
+<div class="section" id="id2">
+<h2>2.準備するもの<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>USBメモリ 16GB (フォーマットしても良いもの)</li>
+<li>Movidius</li>
+<li>Lenovo X201 ※</li>
+</ul>
+<p>※ MovidiusはUbuntuでしか動作しないため、X201にWindowsが入っている際はフォーマットされます。
+※ 本書はX201をUbuntu開発機にしても問題ない方限定です。</p>
+</div>
+<div class="section" id="ubuntu">
+<h2>3.Ubuntuのイメージファイルをダウンロードする。<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>MovidiusはUbuntu x86_64 に対応した環境か、Raspberry Pi 3Bの様なボードに対応している。</p>
+<p>勿論Raspberry Pi 3Bを使う方が大多数と思われるが、メインで開発をするのにRaspberry Pi 3Bを元に行うとか物凄く面倒！</p>
+<p>そんな事なので、今回家でたまたま眠ってた X201を使ってMovidius専用開発環境の構築を行う。</p>
+<p>今回使用するのは、Ubuntu x86_64 (amd64)(64ビットモデル) です。</p>
+<ul class="simple">
+<li>Ubuntu</li>
+</ul>
+<p><a class="reference external" href="https://www.ubuntu.com/desktop">https://www.ubuntu.com/desktop</a></p>
+<ul class="simple">
+<li>Xbuntu</li>
+</ul>
+<p><a class="reference external" href="https://xubuntu.org/download">https://xubuntu.org/download</a></p>
+<p>著者はメインでXbuntuを使用しています。</p>
+<p>試しにLinux MINT で試しましたが、OS Checkでエラーになりました。Xbuntuにします。</p>
+<p>Movidiusの公式には　Ubunt 16.04と書いてありますが、記事を書いた時点では Ubuntu 18.04でも動作することが分かりました。</p>
+<p>なるべく最新のものをオススメしたいので、今回はUbunt 18.xx を元に説明していきます。</p>
+<p>☆ 今回使ったISOファイル　直リンク</p>
+<p><a class="reference external" href="http://ubuntutym2.u-toyama.ac.jp/xubuntu/18.04/release/xubuntu-18.04-desktop-amd64.iso">http://ubuntutym2.u-toyama.ac.jp/xubuntu/18.04/release/xubuntu-18.04-desktop-amd64.iso</a></p>
+<p>これからUSBブートを作成します。</p>
+</div>
+<div class="section" id="usbusb">
+<h2>4.USBブート用のUSBメモリーを作成する<a class="headerlink" href="#usbusb" title="Permalink to this headline">¶</a></h2>
+<p>USBブート用のUSBメモリーを作成するソフトは、</p>
+<p>今回は説明の都合、Windows,Mac,Linuxで動作するEtcherを使用します。</p>
+<blockquote>
+<div><a class="reference external" href="https://etcher.io/">https://etcher.io/</a></div></blockquote>
+<p>自分に合わせたＯＳ選択し、ダウンロードします。</p>
+<p>インストール後にEtcherを起動します。</p>
+<p>以下の様な画面が出ますので 「Select image」をクリックし、先ほどダウンロードしたISOを選択します。</p>
+<img alt="../_images/031.PNG" src="../_images/031.PNG" />
+<p>続いて「Select drive」を選択します。そこでどのドライブにしますか？と聞かれますので、USBメモリを選択します。</p>
+<img alt="../_images/04.PNG" src="../_images/04.PNG" />
+<p>すると、以下のような状態になり、再度確認を行い、問題が無いようでしたら「Flash!」をクリックします。</p>
+<img alt="../_images/051.PNG" src="../_images/051.PNG" />
+<p>以下のように進捗バーが進み、うまく行くと終了と図のようになります。</p>
+<img alt="../_images/061.PNG" src="../_images/061.PNG" />
+<img alt="../_images/071.PNG" src="../_images/071.PNG" />
+<p>終了後、USBメモリを抜き、X201のUSBポートへ接続します。</p>
+</div>
+<div class="section" id="x201usb-boot">
+<h2>5.X201でUSB-Bootを行う<a class="headerlink" href="#x201usb-boot" title="Permalink to this headline">¶</a></h2>
+<p>X201のUSBポートにUSBメモリを接続し、X201の電源を入れます。</p>
+<p>その際、OSが立ち上がる前の以下の画面の時に、F1を押し、BIOS設定にします。</p>
+<img alt="../_images/01.png" src="../_images/01.png" />
+<p>以下の様な画面になり、十字キーの下を押し、「Srartup」を選択し、Enterを押します。</p>
+<img alt="../_images/02.png" src="../_images/02.png" />
+<p>すると、以下のような画面になり、Bootの所でEnterを押します。</p>
+<img alt="../_images/03.png" src="../_images/03.png" />
+<p>次に Boot priority order:　の項目で　USB HDD を上位に持っていき、1.USB HDDとしたいので、</p>
+<p>USB HDDに十字キーで選択し、F6をクリックして上に移動していきます。</p>
+<p>ちなみに、下に下げるときはF5です。</p>
+<p>1.USB HDDとなれば、起動時にUSBメモリが認識されUSBメモリに書き込まれたイメージファイルが立ち上がります。</p>
+<img alt="../_images/04.png" src="../_images/04.png" />
+<p>変更した内容を保存して再起動します。　F10を押し、保存してよいかを聞かれますのでYesをEnterし、再起動します。</p>
+<p>もしここでUSBメモリを接続してない事に気がついた際は、X201の電源を一度落とし、USBを指してから電源を入れると同様にUSBメモリから起動するはずです。</p>
+<p>後は通常のUbuntのインストール方法と同じです。ここでは割愛します。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参考サイト:</th><td class="field-body"><a class="reference external" href="https://qiita.com/SUZUKI_Masaya/items/fbc10d437788dd95ad0d">https://qiita.com/SUZUKI_Masaya/items/fbc10d437788dd95ad0d</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ubuntu-xubuntu-movidius">
+<h2>5.Ubuntu(Xubuntu)でMovidiusを動かす。<a class="headerlink" href="#ubuntu-xubuntu-movidius" title="Permalink to this headline">¶</a></h2>
+<p>さて、Ubuntuのインストールが終わり、無事に再起動が終了しX201でUbuntuが立ち上がっていると思います。</p>
+<p>ここからはコマンドプロントで説明していきますのでコマンドプロントを開きます。</p>
+<p>まず、初期作法として以下のコマンドを実行します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>これでOSリリース後のアップデートが完了します。</p>
+<p>次に開発で必要なソフトウェアをインストールします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">setuptools</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+</pre></div>
+</div>
+<p>続いて、MovidiusのSDKをインストールします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">workspace</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">workspace</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">movidius</span><span class="o">/</span><span class="n">ncsdk</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">workspace</span><span class="o">/</span><span class="n">ncsdk</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>エラーが出ないことを祈ります。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Yolo_Caffe_NCS.html" title="Movidius で YOLO(Caffe) を試す方法"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Movidius Neural Compute Stickで遊んで見る 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, ArtifactNoise.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

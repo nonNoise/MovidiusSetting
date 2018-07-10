@@ -11,9 +11,9 @@ Movidius Neural Compute Stickで遊んで見る
     .. toctree::
         :maxdepth: 1
 
-        rst/main
         rst/setup
         rst/Yolo_Caffe_NCS.rst
+        rst/x201
 
 ◇購入方法（Amazon.jp）
 
