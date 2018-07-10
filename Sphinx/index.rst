@@ -18,13 +18,10 @@ Movidius Neural Compute Stickで遊んで見る
 ◇購入方法（Amazon.jp）
 --------------------------------------------------
 
-
 .. raw:: html
     
     <a href="https://www.amazon.co.jp/Movidius-Neural-Compute-Stick-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/dp/B074PRCJKH/ref=sr_1_1?m=A9356EJ9J50KH&s=merchant-items&ie=UTF8&qid=1531235239&sr=1-1">
     <img src="https://images-na.ssl-images-amazon.com/images/I/41fd1Gsbr6L._SY355_.jpg" alt=""></a>
-
-
 
 ----------------------------------------------------------------------
 
