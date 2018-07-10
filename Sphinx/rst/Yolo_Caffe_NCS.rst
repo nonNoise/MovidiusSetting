@@ -50,6 +50,20 @@ yoloNCS/py_examples ディレクトリに居ることを想定して
 
 を実行。するとpy_examplesディレクトリに graphが出来ます。
 
+もし、Error importing caffeとエラーが出た際は、以下の内容をコマンドに入力すると治る場合がある。
+
+::
+
+    export PYTHONPATH=$env:"/opt/movidius/caffe/python":$PYTHONPATH
+
+実行後に以下のような渓谷が出るが、これは気にしなくても良いらしい。（紛らわしい）
+
+::
+
+    /usr/local/bin/ncsdk/Controllers/FileIO.py:52: UserWarning: You are using a large type. Consider reducing your data sizes for best performance
+    "Consider reducing your data sizes for best performance\033[0m")
+
+
 ◇Yolo (Caffe)を試してみる
 -------------------------------------------------
 
