@@ -18,11 +18,12 @@ Movidius Neural Compute Stickで遊んで見る
 ◇購入方法（Amazon.jp）
 --------------------------------------------------
 
-https://www.amazon.co.jp/Movidius-Neural-Compute-Stick-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/dp/B074PRCJKH/ref=sr_1_1?m=A9356EJ9J50KH&s=merchant-items&ie=UTF8&qid=1531235239&sr=1-1
 
 .. raw:: html
     
-    <a target="_blank"  href="https://www.amazon.co.jp/Movidius-Neural-Compute-Stick-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/dp/B074PRCJKH/ref=sr_1_1?m=A9356EJ9J50KH&s=merchant-items&ie=UTF8&qid=1531235239&sr=1-1"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B074PRCJKH&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=movidius-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=movidius-22&l=am2&o=9&a=B074PRCJKH" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <a href="https://www.amazon.co.jp/Movidius-Neural-Compute-Stick-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/dp/B074PRCJKH/ref=sr_1_1?m=A9356EJ9J50KH&s=merchant-items&ie=UTF8&qid=1531235239&sr=1-1">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/41fd1Gsbr6L._SY355_.jpg" alt=""></a>
+
 
 
 ----------------------------------------------------------------------
