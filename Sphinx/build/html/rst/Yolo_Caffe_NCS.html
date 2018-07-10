@@ -134,6 +134,15 @@
 </pre></div>
 </div>
 <p>を実行。するとpy_examplesディレクトリに graphが出来ます。</p>
+<p>もし、Error importing caffeとエラーが出た際は、以下の内容をコマンドに入力すると治る場合がある。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PYTHONPATH=$env:&quot;/opt/movidius/caffe/python&quot;:$PYTHONPATH
+</pre></div>
+</div>
+<p>実行後に以下のような渓谷が出るが、これは気にしなくても良いらしい。（紛らわしい）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ncsdk</span><span class="o">/</span><span class="n">Controllers</span><span class="o">/</span><span class="n">FileIO</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">using</span> <span class="n">a</span> <span class="n">large</span> <span class="nb">type</span><span class="o">.</span> <span class="n">Consider</span> <span class="n">reducing</span> <span class="n">your</span> <span class="n">data</span> <span class="n">sizes</span> <span class="k">for</span> <span class="n">best</span> <span class="n">performance</span>
+<span class="s2">&quot;Consider reducing your data sizes for best performance</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>◇Yolo (Caffe)を試してみる<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
